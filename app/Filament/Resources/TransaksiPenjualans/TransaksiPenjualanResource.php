@@ -20,6 +20,10 @@ class TransaksiPenjualanResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
+    protected static ?string $navigationLabel = 'Transaksi Penjualan'; // Label navigasi yang lebih jelas
+    protected static ?string $modelLabel = 'Transaksi Penjualan';
+    protected static ?string $pluralModelLabel = 'Transaksi Penjualan';
+
     protected static ?string $recordTitleAttribute = 'id';
 
     public static function form(Schema $schema): Schema
@@ -35,7 +39,7 @@ class TransaksiPenjualanResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            // Tambahkan relasi jika diperlukan, misalnya ke DetailPenjualan
         ];
     }
 

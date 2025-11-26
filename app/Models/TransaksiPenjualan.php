@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class TransaksiPenjualan extends Model
 {
     protected $fillable = [
+        'tanggal_transaksi', // Tambahkan ini jika belum ada di migrasi
         'metode_pembayaran_id',
         'total_harga'
     ];

@@ -14,23 +14,36 @@ class TransaksiPenjualansTable
     {
         return $table
             ->columns([
-                TextColumn::make('metode_pembayaran_id')
-                    ->numeric()
+                TextColumn::make('id')
+                    ->label('ID')
                     ->sortable(),
+
+                TextColumn::make('tanggal_transaksi')
+                    ->date()
+                    ->sortable()
+                    ->label('Tanggal'),
+
+                TextColumn::make('metodePembayaran.nama_metode') // Sesuai model MetodePembayaran
+                    ->label('Metode Pembayaran')
+                    ->sortable(),
+
                 TextColumn::make('total_harga')
-                    ->numeric()
-                    ->sortable(),
+                    ->money('IDR') // Format sebagai mata uang Rupiah
+                    ->sortable()
+                    ->label('Total Harga'),
+
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                // Tambahkan filter jika diperlukan, misalnya berdasarkan tanggal
             ])
             ->recordActions([
                 EditAction::make(),
