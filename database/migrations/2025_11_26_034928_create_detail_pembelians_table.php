@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('detail_pembelian', function (Blueprint $table) {
+        Schema::create('detail_pembelians', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('transaksi_pembelian_id')->constrained('transaksi_pembelian')->cascadeOnDelete();
-            $table->foreignId('produk_id')->constrained('produk')->cascadeOnDelete();
+            $table->foreignId('transaksi_pembelian_id')->constrained('transaksi_pembelians')->cascadeOnDelete();
+            $table->foreignId('produk_id')->constrained('produks')->cascadeOnDelete();
             $table->integer('jumlah');
             $table->decimal('harga_modal', 15, 2);
             $table->decimal('subtotal', 15, 2);

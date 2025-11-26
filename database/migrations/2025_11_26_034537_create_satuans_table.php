@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('metode_pembayaran', function (Blueprint $table) {
+        Schema::create('satuans', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_metode')->unique();
+            $table->string('nama_satuan')->unique();
             $table->timestamps();
         });
     }
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('metode_pembayaran');
+        Schema::dropIfExists('satuan');
     }
 };

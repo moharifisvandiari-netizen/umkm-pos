@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('produk', function (Blueprint $table) {
+         Schema::create('produks', function (Blueprint $table) {
             $table->id();
             $table->string('kode_barang')->unique();
             $table->string('nama_produk');
-            $table->foreignId('kategori_id')->constrained('kategori')->cascadeOnDelete();
-            $table->foreignId('satuan_id')->constrained('satuan')->cascadeOnDelete();
+            $table->foreignId('kategori_id')->constrained('kategoris')->cascadeOnDelete();
+            $table->foreignId('satuan_id')->constrained('satuans')->cascadeOnDelete();
             $table->decimal('harga_modal', 15, 2);
             $table->decimal('harga_jual', 15, 2);
             $table->integer('stok')->default(0);
