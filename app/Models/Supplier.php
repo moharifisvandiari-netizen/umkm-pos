@@ -4,7 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Supplier extends Model
 {
-    //
+    protected $fillable = [
+        'nama_supplier',
+        'kontak',
+        'alamat',
+    ];
+
+    public function transaksiPembelians()
+    {
+        return $this->hasMany(TransaksiPembelian::class);
+    }
 }
