@@ -9,6 +9,7 @@ class MetodePembayaran extends Model
 {
     use HasFactory;
 
+    protected $table = 'metode_pembayaran'; // sesuai nama tabel migration
     protected $fillable = ['nama_metode'];
 
     public function penjualans()

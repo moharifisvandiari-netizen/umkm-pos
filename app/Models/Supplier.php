@@ -9,7 +9,8 @@ class Supplier extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nama_supplier','kontak','alamat','catatan'];
+    protected $table = 'supplier'; // sesuai nama tabel migration
+    protected $fillable = ['nama_supplier', 'kontak', 'alamat', 'catatan'];
 
     public function pembelians()
     {
