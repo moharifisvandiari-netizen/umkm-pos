@@ -19,6 +19,7 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 // ADMIN ROUTES
 Route::middleware(['admin'])->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::resource('produk', ProdukController::class);
     Route::resource('kategori', KategoriController::class);
     Route::resource('satuan', SatuanController::class);
     Route::resource('supplier', SupplierController::class);
