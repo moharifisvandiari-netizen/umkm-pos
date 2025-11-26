@@ -8,16 +8,19 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthAdmin
 {
-    /**
-     * Handle an incoming request.
-     */
     public function handle(Request $request, Closure $next)
     {
+        // Jika route login, biarkan lewat
+        if ($request->routeIs('login') || $request->routeIs('login.post')) {
+            return $next($request);
+        }
+
+        // Kalau user login dan role admin → lanjut
         if (Auth::check() && Auth::user()->role === 'admin') {
             return $next($request);
         }
 
-        // Kalau belum login atau bukan admin, redirect ke login
+        // Kalau gagal → redirect ke login
         return redirect()->route('login')->with('error', 'Silahkan login sebagai admin.');
     }
 }
