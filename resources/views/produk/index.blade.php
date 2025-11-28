@@ -12,7 +12,7 @@
             <th class="px-4 py-2">Nama</th>
             <th class="px-4 py-2">Kategori</th>
             <th class="px-4 py-2">Satuan</th>
-            <th class="px-4 py-2">Harga Jual</th>
+            <th class="Apx-4 py-2">Harga Jual</th>
             <th class="px-4 py-2">Stok</th>
             <th class="px-4 py-2">Aksi</th>
         </tr>
