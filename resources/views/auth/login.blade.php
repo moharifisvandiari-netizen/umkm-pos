@@ -5,10 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - UMKM POS</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -19,9 +17,7 @@
 </head>
 <body class="min-h-screen flex items-center justify-center">
     <div class="max-w-md w-full mx-4">
-        <!-- Login Card -->
         <div class="bg-white rounded-2xl shadow-2xl p-8">
-            <!-- Logo -->
             <div class="text-center mb-8">
                 <div class="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full mb-4">
                     <i class="fas fa-cash-register text-2xl text-white"></i>
@@ -30,11 +26,9 @@
                 <p class="text-gray-600 mt-2">Sistem Kasir UMKM</p>
             </div>
 
-            <!-- Login Form -->
             <form method="POST" action="{{ route('login') }}">
                 @csrf
                 
-                <!-- Username -->
                 <div class="mb-6">
                     <label for="username" class="block text-sm font-medium text-gray-700 mb-2">
                         <i class="fas fa-user mr-2"></i>Username
@@ -51,7 +45,6 @@
                     @enderror
                 </div>
 
-                <!-- Password -->
                 <div class="mb-6">
                     <label for="password" class="block text-sm font-medium text-gray-700 mb-2">
                         <i class="fas fa-lock mr-2"></i>Password
